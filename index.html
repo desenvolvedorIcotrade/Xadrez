@@ -1,33 +1,95 @@
-<!DOCTYPE html>
-<html lang="en" >
 
-<head>
+<html lang="en" class=""><head><script src="//static.codepen.io/assets/editor/live/console_runner-1df7d3399bdc1f40995a35209755dcfd8c7547da127f6469fd81e5fba982f6af.js"></script><script src="//static.codepen.io/assets/editor/live/css_reload-5619dc0905a68b2e6298901de54f73cefe4e079f65a75406858d92924b4938bf.js"></script><meta charset="UTF-8"><meta name="robots" content="noindex"><link rel="shortcut icon" type="image/x-icon" href="//static.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico"><link rel="mask-icon" type="" href="//static.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111"><link rel="canonical" href="https://codepen.io/luizpicolo/pen/hArIt">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="viewport" content="width=device-width, initial-scale=2">
-<meta name="viewport" content="width=device-width, initial-scale=3">
-<meta name="viewport" content="width=device-width, initial-scale=4">
+<style class="cp-pen-styles">*, *::before, *::after{
+  box-sizing: border-box; 
+  -webkit-box-sizing: border-box; 
+  -moz-box-sizing: border-box; 
+  -o-box-sizing: border-box;  
+}
+
+#containerFull {
+  width: 780px;
+  margin: 0 auto;
+}
+
+#container {
+  border: 3px solid #000;
+  width: 566px;
+  height: 563px;
+  border-radius: 5px;
+  cursor: pointer;
+  float: left;
+}
+
+.row {
+  clear: both;
+}
+
+.row div {
+  font-size: 3em;
+  float: left;
+  width: 70px;
+  height: 70px;
+  border-left: 1.5px solid #000;
+  border-bottom: 1.5px solid #000;
+  text-align: center;
+}
+
+.row div:first-child {
+  border-left: 0;
+}
+
+.line-1 div:nth-child(2n+1)  {
+  background: #000;
+  color: #FFF
+}
+
+.line-2 div:nth-child(2n)  {
+  background: #000;
+  color: #FFF
+}
+
+#pontuacao {
+  border: 1px solid #000;
+  width: 200px;
+  height: 50px;
+  float:left;
+  padding: 6px;
+  font-size: 30px;
+  text-align: right;
+  margin-left: 5px;
+  border-radius: 5px; 
+}
+
+.mensagem {
+  text-align: center;
+}</style></head><body>
 <div id="containerFull">
   <div id="container">
     <div class="row line-1">
-      <div id="1">&#9814</div>
-      <div id="2">&#9816</div>
-      <div id="3">&#9815</div>
-      <div id="4">&#9819</div>
-      <div id="5">&#9812</div>
-      <div id="6">&#9821</div>
-      <div id="7">&#9816</div>
-      <div id="8">&#9820</div>
+      <div id="1">♖</div>
+      <div id="2">♘</div>
+      <div id="3">♗</div>
+      <div id="4">♛</div>
+      <div id="5">♔</div>
+      <div id="6">♝</div>
+      <div id="7">♘</div>
+      <div id="8">♜</div>
     </div>
     <div class="row line-2">
-      <div id="9">&#9823</div>
-      <div id="10">&#9817</div>
-      <div id="11">&#9823</div>
-      <div id="12">&#9817</div>
-      <div id="13">&#9823</div>
-      <div id="14">&#9817</div>
-      <div id="15">&#9823</div>
-      <div id="16">&#9817</div>
+      <div id="9">♟</div>
+      <div id="10">♙</div>
+      <div id="11">♟</div>
+      <div id="12">♙</div>
+      <div id="13">♟</div>
+      <div id="14">♙</div>
+      <div id="15">♟</div>
+      <div id="16">♙</div>
     </div>
     <div class="row line-1">
       <div id="17"></div>
@@ -70,24 +132,24 @@
       <div id="48"></div>
     </div>
     <div class="row line-1">
-      <div id="49">&#9817</div>
-      <div id="50">&#9823</div>
-      <div id="51">&#9817</div>
-      <div id="52">&#9823</div>
-      <div id="53">&#9817</div>
-      <div id="54">&#9823</div>
-      <div id="55">&#9817</div>
-      <div id="56">&#9823</div>
+      <div id="49">♙</div>
+      <div id="50">♟</div>
+      <div id="51">♙</div>
+      <div id="52">♟</div>
+      <div id="53">♙</div>
+      <div id="54">♟</div>
+      <div id="55">♙</div>
+      <div id="56">♟</div>
     </div>
     <div class="row line-2">
-      <div id="57">&#9820</div>
-      <div id="58">&#9816</div>
-      <div id="59">&#9815</div>
-      <div id="60">&#9813</div>
-      <div id="61">&#9812</div>
-      <div id="62">&#9815</div>
-      <div id="63">&#9816</div>
-      <div id="64">&#9814</div>
+      <div id="57">♜</div>
+      <div id="58">♘</div>
+      <div id="59">♗</div>
+      <div id="60">♕</div>
+      <div id="61">♔</div>
+      <div id="62">♗</div>
+      <div id="63">♘</div>
+      <div id="64">♖</div>
     </div>
   </div>
   <div id="pontuacao">0</div>
@@ -95,25 +157,69 @@
     Clique nas peças e comece seu jogo
   </div>
 </div>
-  
+<script src="//static.codepen.io/assets/common/stopExecutionOnTimeout-de7e2ef6bfefd24b79a3f68b414b87b8db5b08439cac3f1012092b2290c719cd.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>// Função para realizar as jogas
+$('#container div.row div').click(function () {
 
-  <title>xadrez</title>
+  // Captura o ID da posição da peça
+  var id = $(this).attr('id');
 
-  
-  <style>
-  
-  </style>
+  // Captura o conteudo da seleção (Imagem peça)
+  var peca = $(this).text();
 
-  
-</head>
+  // inclui a peça seleciona no WebStoraged utilizando a   função setPosicaoPeca. Caso a peça já esteja selecionada anteriormente, a mesma e posicionada no local desejada e é limpada do webStoraged
+  if (peca != "") {
+    setPosicaoPeca(id, peca);
+    $(this).text("");
+  } else
+  {
+    if (getPeca()) {
+      $('#' + id).text(getPeca());
 
-<body>
+      // Altera o contador de movimentos
+      $('#pontuacao').text(
+      parseInt($('#pontuacao').text()) + 1);
 
-  
-  <script>
-    
-  </script>
 
-</body>
+      // funcao para limpar os dados
+      limparDados();
+    }
+  }
+});
 
-</html>
+// Função para setar a posição da peça e salvar no webstoraged
+function setPosicaoPeca(id, peca) {
+  localStorage.setItem("id", id);
+  localStorage.setItem("peca", peca);
+}
+
+// Função para retornar o ID da peça que havia sido selecionada anteriormente
+function getPosicaoID() {
+  return localStorage.getItem("id");
+}
+
+// Função para o retorno da peca selecionada anteriormente
+function getPeca() {
+  return localStorage.getItem('peca');
+}
+
+// Função para limpar todos os dados 
+function limparDados() {
+  localStorage.clear();
+}
+
+// Função para validar os dados da jogada
+function validarJogada(posicaoInicial, posicaFinal, peca)
+{
+  // Cavalo preto
+  if (peca == '&#9816')
+  {
+    if (!(posicaoInicial - posicaFinal) == 17)
+    {
+      alert("Jogada Inválida");
+    }
+  }
+}
+//# sourceURL=pen.js
+</script>
+</body></html>
