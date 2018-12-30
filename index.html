@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta name="p:domain_verify" content="9bf9af6d599d5decb7eeb7caa91cf939"/>
+</head>
+<title>hello pinterest</title>
+
+<body>
+<!-- Prebid BIDS START -->
+<script> 
+    var PREBID_TIMEOUT = 3000;
+    var str = window.location.pathname;
+    if (window.location.pathname === "/") {
+        var adUnits = [{code: 'home_leaderboard',
+            mediaTypes: {banner: {sizes: [[728, 90],[970, 250]]}},
+            bids: [{bidder: 'appnexus', params: {placementId: '13171399'}},
+                {bidder: 'rubicon', params: {zoneId: 915318, siteId: 71700,accountId: 14126}},
+                {bidder: 'smartadserver',params: {domain: '//prg.smartadserver.com',pageId: 876873,siteId: 197127,formatId: 60927}},
+                {bidder: 'criteo',params: {zoneId: 1199671}},
+                {bidder: 'rtbhouse',params: {region: "prebid-us", publisherId: "9938f9d00b69522e2a5b"}}]},
+            {code: 'home_square', 
+             mediaTypes: {banner: {sizes:[[300, 250],[336, 280]]}},
+             bids: [{bidder: 'appnexus',params: {placementId: '13171404'}},
+                    {bidder: 'rubicon',params:{zoneId: 915318,siteId: 71700,accountId: 14126}},
+                    {bidder: 'smartadserver',params: {domain: '//prg.smartadserver.com',pageId: 876873,siteId: 197127, formatId: 60404}},
+                    {bidder: 'criteo',params: {zoneId: 1199670}},
+                    {bidder: 'rtbhouse',params: {region: "prebid-us", publisherId: "9938f9d00b69522e2a5b"}}]
+            }];
+    } else if (str.search(/top\/semana\//) === 1 ) {
+        var adUnits = [{
+            code: 'top_leaderboard',
+            mediaTypes: {banner: {sizes: [[970, 250],[970, 90],[728, 90]]}},
+            bids: [{bidder: 'appnexus',params: {placementId: '13171448'}},
+                   {bidder: 'rubicon',params: {zoneId: 915318,siteId: 71700,accountId: 14126}},
+                   {bidder: 'smartadserver',params: {domain: '//prg.smartadserver.com',pageId: 876873,siteId: 197127,formatId: 60927}},
+                   {bidder: 'criteo',params: {zoneId: 1199671}},
+                   {bidder: 'rtbhouse',params: {region: "prebid-us", publisherId: "9938f9d00b69522e2a5b"}}]
+        },
+        {code: 'top_square',
+         mediaTypes: {banner: {sizes: [[300, 250],[336, 280]]}},
+         bids: [{bidder: 'appnexus',params: {placementId: '13171450'}},
+                {bidder: 'rubicon',params: {zoneId: 915318,siteId: 71700,accountId: 14126}},
+                {bidder: 'smartadserver',params: {domain: '//prg.smartadserver.com',pageId: 876873,siteId: 197127,formatId: 60404}},
+                {bidder: 'criteo',params: {zoneId: 1199670}},
+                {bidder: 'rtbhouse',params: {region: "prebid-us", publisherId: "9938f9d00b69522e2a5b"}}]
+        }];
+    /*}  else if (str.search(/jogos-online|jogos-divertidos|jogos-de-|Jogos-do|jogos-do-|jogos-com-/) === 1) {*/
+        }  else if (category) {
+        var adUnits = [{
+            code: 'category_leaderboard',
+            mediaTypes: {banner: {sizes: [[728, 90],[970, 90],[970, 250]]}},
+            bids: [{bidder: 'appnexus', params: {placementId: '13171417'}},
+                   {bidder: 'rubicon', params: {zoneId: 915318, siteId: 71700, accountId: 14126}},
+                   {bidder: 'smartadserver',params: {domain: '//prg.smartadserver.com',pageId: 876873,siteId: 197127,formatId: 60927}},
+                   {bidder: 'criteo',params: {zoneId: 1199671}},
+                   {bidder: 'rtbhouse',params: {region: "prebid-us", publisherId: "9938f9d00b69522e2a5b"}}]
+        },
+        {code: 'category_square',
+         mediaTypes: {banner: {sizes: [[300, 250], [336, 280]]}},
+         bids: [
+             {bidder: 'appnexus',params: {placementId: '13171443'}},
+             {bidder: 'rubicon',params: {zoneId: 915318,siteId: 71700,accountId: 14126}},
+             {bidder: 'smartadserver',params: {domain: '//prg.smartadserver.com',pageId: 876873,siteId: 197127,formatId: 60404}},
+             {bidder: 'criteo',params: {zoneId: 1199670}},
+             {bidder: 'rtbhouse',params: {region: "prebid-us", publisherId: "9938f9d00b69522e2a5b"}}]
+        }];
+    } else if (str.search(/busca/) === 1) {
+        var adUnits = [{code: 'search_square',
+            mediaTypes: {banner: {sizes: [[300, 250],[336, 280]]}},
+            bids: [{bidder: 'appnexus',params: {placementId: '13171472'}},
+                   {bidder: 'rubicon',params: {zoneId: 915318,siteId: 71700,accountId: 14126}},
+                   {bidder: 'smartadserver',params: {domain: '//prg.smartadserver.com',pageId: 876873,siteId: 197127,formatId: 60404}},
+                   {bidder: 'criteo',params: {zoneId: 1199670}},
+                   {bidder: 'rtbhouse',params: {region: "prebid-us", publisherId: "9938f9d00b69522e2a5b"}}]
+        }];
+
+    }  else if (str.search(/jogos\/[a-zA-z]|Jogos-online\/[a-zA-z]/) === 1) {
+        var adUnits = [{code: 'game_leaderboard',
+            mediaTypes: {banner: {sizes: [[970, 90],[728, 90]]}},
+            bids: [{bidder: 'appnexus',params: {placementId: '13171453'}},
+                   {bidder: 'rubicon',params: {zoneId: 915318,siteId: 71700,accountId: 14126}},
+                   {bidder: 'smartadserver',params: {domain: '//prg.smartadserver.com',pageId: 876873,siteId: 197127,formatId: 60927}},
+                   {bidder: 'criteo',params: {zoneId: 1199671}},
+                   {bidder: 'rtbhouse',params: {region: "prebid-us", publisherId: "9938f9d00b69522e2a5b"}}]
+        },
+        {code: 'game_square',
+         mediaTypes: {banner: {sizes: [[300, 250],[336, 280]]}},
+         bids: [{bidder: 'appnexus',params: {placementId: '13171456'}},
+                {bidder: 'rubicon',params: {zoneId: 915318,siteId: 71700,accountId: 14126}},
+                {bidder: 'smartadserver',params: {domain: '//prg.smartadserver.com',pageId: 876873,siteId: 197127,formatId: 60404}},
+                {bidder: 'criteo',params: {zoneId: 1199670}},
+                {bidder: 'rtbhouse',params: {region: "prebid-us", publisherId: "9938f9d00b69522e2a5b"}}]
+        }];
+
+    } else if ( str.search(/downloads\/[a-zA-z]/) === 1) {
+        var adUnits = [{
+            code: 'download_category_leaderboard',
+            mediaTypes: {banner: {sizes: [[970, 250], [970, 90], [728, 90]],}},
+            bids: [{bidder: 'appnexus',params: {placementId: '13171487'}},
+            {bidder: 'rubicon',params: {zoneId: 915318,siteId: 71700,accountId: 14126}},
+            {bidder: 'smartadserver',params: {domain: '//prg.smartadserver.com',pageId: 876873,siteId: 197127,formatId: 60927}},
+            {bidder: 'criteo',params: {zoneId: 1199671}},
+            {bidder: 'rtbhouse',params: {region: "prebid-us", publisherId: "9938f9d00b69522e2a5b"}}]
+        }];
+    } else if (str.search(/downloads/) === 1) {
+        var adUnits = [{code: 'downloads_leaderboard',
+            mediaTypes: {banner: {sizes: [[970, 250],[970, 90],[728, 90]]}},
+            bids: [{bidder: 'appnexus',params: {placementId: '13171485'}},
+                   {bidder: 'rubicon',params: {zoneId: 915318,siteId: 71700,accountId: 14126}},
+                   {bidder: 'smartadserver',params: {domain: '//prg.smartadserver.com',pageId: 876873,siteId: 197127,formatId: 60927}},
+                   {bidder: 'criteo',params: {zoneId: 1199671}},
+                   {bidder: 'rtbhouse',params: {region: "prebid-us", publisherId: "9938f9d00b69522e2a5b"}}]
+        }];
+    }  else if (str.search(/novidades/) === 1) {
+        var adUnits = [{code: 'news_leaderboard',
+            mediaTypes: {banner: {sizes: [[970, 250],[970, 90],[728, 90]]}},
+            bids: [{bidder: 'appnexus',params: {placementId: '13171483'}},  
+                   {bidder: 'rubicon',params: {zoneId: 915318,siteId: 71700,accountId: 14126}},
+                   {bidder: 'smartadserver',params: {domain: '//prg.smartadserver.com',pageId: 876873,siteId: 197127,formatId: 60927}},
+                   {bidder: 'criteo',params: {zoneId: 1199671}},
+                   {bidder: 'rtbhouse',params: {region: "prebid-us", publisherId: "9938f9d00b69522e2a5b"}}]
+        },
+        {code: 'news_square',
+         mediaTypes: {banner: {sizes: [[300, 250],[336, 280]]}},
+         bids: [{bidder: 'appnexus',params: {placementId: '13171484'}},
+                {bidder: 'rubicon',params: {zoneId: 915318,siteId: 71700,accountId: 14126}},
+                {bidder: 'smartadserver',params: {domain: '//prg.smartadserver.com',pageId: 876873,siteId: 197127,formatId: 60404}},
+                {bidder: 'criteo',params: {zoneId: 1199670}},
+                {bidder: 'rtbhouse',params: {region: "prebid-us", publisherId: "9938f9d00b69522e2a5b"}}]
+        }];
+    } else if (str.search(/listas\/[a-zA-z]/) === 1) {
+        var adUnits = [
+         {code: 'playlist_leaderboard',
+          mediaTypes: {banner: {sizes: [[970, 90],[728, 90]]}},
+          bids: [{bidder: 'appnexus',params: {placementId: '13171480'}},
+                 {bidder: 'rubicon',params: {zoneId: 915318,siteId: 71700,accountId: 14126}},
+                 {bidder: 'smartadserver',params: {domain: '//prg.smartadserver.com',pageId: 876873,siteId: 197127,formatId: 60927}},
+                 {bidder: 'criteo',params: {zoneId: 1199671}},
+                 {bidder: 'rtbhouse',params: {region: "prebid-us", publisherId: "9938f9d00b69522e2a5b"}}]
+        },
+        {code: 'playlist_square',
+         mediaTypes: {banner: {sizes: [[300, 250],[336, 280]]}},
+         bids: [{bidder: 'appnexus',params: {placementId: '13171481'}},
+                {bidder: 'rubicon',params: {zoneId: 915318,siteId: 71700,accountId: 14126}},
+                {bidder: 'smartadserver',params: {domain: '//prg.smartadserver.com',pageId: 876873,siteId: 197127,formatId: 60404}},
+                {bidder: 'criteo',params: {zoneId: 1199670}},
+                {bidder: 'rtbhouse',params: {region: "prebid-us", publisherId: "9938f9d00b69522e2a5b"}}]
+        }];
+    } 
+
+
+    var pbjs = pbjs || {};
+    pbjs.que = pbjs.que || [];
+    /**pbjs.que.push(function() {
+        pbjs.enableSendAllBids();
+    });**/
+
+    var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+    googletag.cmd.push(function() {
+        googletag.pubads().disableInitialLoad();
+    });
+
+        pbjs.que.push(function() {
+        pbjs.addAdUnits(adUnits);
+        pbjs.setConfig({
+            priceGranularity: customConfigObject,
+            enableSendAllBids: true
+        });
+            pbjs.requestBids({
+                bidsBackHandler: sendAdserverRequest
+            });
+        });
+
+    var customConfigObject = {
+        "buckets": [{
+            "min": 0,
+            "max": 50,
+            "increment": 0.01
+        }]
+    };
+
+    function sendAdserverRequest() {
+        if (pbjs.adserverRequestSent) return;
+        pbjs.adserverRequestSent = true;
+        googletag.cmd.push(function() {
+            pbjs.que.push(function() {
+                pbjs.setTargetingForGPTAsync();
+                googletag.pubads().refresh();
+            });
+        });
+    }
+    
+    /*
+    (function() {
+        var gads = document.createElement('script');
+             gads.async = true;
+             gads.type = 'text/javascript';
+             gads.src = '//www.googletagservices.com/tag/js/gpt.js';
+             var node = document.getElementsByTagName('script')[0];
+             node.parentNode.insertBefore(gads, node);
+                
+    })();
+    */
+
+    setTimeout(function() {
+        sendAdserverRequest();
+    }, PREBID_TIMEOUT);
+
+    (function() {
+                var d = document, pbs = d.createElement("script");
+                pbs.type = "text/javascript";
+                pbs.src = 'https://obj.ibxk.com.br/cj/prebid.min.js';
+                var target = document.getElementsByTagName("head")[0];
+                target.insertBefore(pbs, target.firstChild);
+                
+    })();
+  </script>
+  <!-- Prebid BIDS END -->
+<script type='text/javascript'>
+var category = false;
+</script>
+
+
+
+</body>
+
+</html>
