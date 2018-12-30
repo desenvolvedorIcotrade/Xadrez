@@ -1,26 +1,90 @@
+<!DOCTYPE html>
 <html>
+    <head>
+        <title></title>
+        <link rel="stylesheet" href="css/reset.css" type="text/css">
+        <link rel="stylesheet" href="css/main.css" type="text/css">
+        <link rel="stylesheet" href="css/orientation_utils.css" type="text/css">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
-</head>
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, minimal-ui" />
+	<meta name="msapplication-tap-highlight" content="no"/>
 
-<body>
-    <div id="game_src"><iframe src="http://img.clickjogos.com.br/dl/7/7f01d920fb6d29bd7c0718437222d8f5/index.html?1529499140" frameborder="0" border="none" scrolling="false" id="31431" style="width: 800px; height: 600px;"></iframe></div>
+        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="js/createjs-2015.11.26.min.js"></script>
+        <script type="text/javascript" src="js/howler.min.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+        
+    </head>
+    <body ondragstart="return false;" ondrop="return false;" >
+	<div style="position: fixed; background-color: transparent; top: 0px; left: 0px; width: 100%; height: 100%"></div>
+          <script>
+            $(document).ready(function(){
+                     var oMain = new CMain({
+                         
+                                            show_score: true,
+                                            start_score: 5000,
+                                            score_decrease_per_second: 10,
+                            
+                                            check_orientation: true,
+                                            fullscreen: true
+                                           });
+                                           
+                                           
+                     $(oMain).on("start_session", function(evt) {
+                            if(getParamValue('ctl-arcade') === "true"){
+                                parent.__ctlArcadeStartSession();
+                            }
+                            //...ADD YOUR CODE HERE EVENTUALLY
+                    });
+                     
+                    $(oMain).on("end_session", function(evt) {
+                           if(getParamValue('ctl-arcade') === "true"){
+                               parent.__ctlArcadeEndSession();
+                           }
+                           //...ADD YOUR CODE HERE EVENTUALLY
+                    });
+                    
+                    $(oMain).on("save_score", function(evt,iWinner, iBlackTime, iWhiteTime, s_iGameType, iWhiteScore) {
+							// iWinner: 
+							// -1 IS DRAW
+							//0 WHITE WINS
+							//1 BLACK WINS
+							
+                            if(getParamValue('ctl-arcade') === "true" && s_iGameType === 1 && iWinner === 0){
+                               parent.__ctlArcadeSaveScore({score:iWhiteScore, szMode: s_iGameType+""});
+                           }
+                     });
+                     
+                     $(oMain).on("share_event", function(evt, iScore, s_iGameType, iWinner) {
+                           if(getParamValue('ctl-arcade') === "true" && s_iGameType === 1 && iWinner === 0){
+                               parent.__ctlArcadeShareEvent({   img: TEXT_SHARE_IMAGE,
+                                                                title: TEXT_SHARE_TITLE,
+                                                                msg: TEXT_SHARE_MSG1 + iScore + TEXT_SHARE_MSG2,
+                                                                msg_share: TEXT_SHARE_SHARE1 + iScore + TEXT_SHARE_SHARE1});
+                           }
+                           //...ADD YOUR CODE HERE EVENTUALLY
+                    });
 
 
+                    $(oMain).on("show_interlevel_ad", function(evt) {
+                           if(getParamValue('ctl-arcade') === "true"){
+                               parent.__ctlArcadeShowInterlevelAD();
+                           }
+                           //...ADD YOUR CODE HERE EVENTUALLY
+                    });
+                     
+                     if(isIOS()){ 
+                        setTimeout(function(){sizeHandler();},200); 
+                    }else{
+                        sizeHandler(); 
+                    }
+           });
 
-<!-- Code injected by live-server -->
-<script type="text/javascript">
+        </script>
+        <canvas id="canvas" class='ani_hack' width="1280" height="1920"> </canvas>
+        <div data-orientation="portrait" class="orientation-msg-container"><p class="orientation-msg-text">Please rotate your device</p></div>
+        <div id="block_game" style="position: fixed; background-color: transparent; top: 0px; left: 0px; width: 100%; height: 100%; display:none"></div>
 
-
-			
-			
-</script>
-</body>
-
+    </body>
 </html>
